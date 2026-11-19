@@ -14,5 +14,7 @@ func main() {
 		Addr:    ":8080",
 	}
 
+	router.Handle("/", http.FileServer(http.Dir(".")))
+
 	log.Fatal(srv.ListenAndServe())
 }
